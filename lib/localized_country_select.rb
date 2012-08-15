@@ -18,6 +18,7 @@
 # Code adapted from Rails' default +country_select+ plugin (previously in core)
 # See http://github.com/rails/country_select/tree/master/lib/country_select.rb
 #
+
 module LocalizedCountrySelect
   class << self
     # Returns array with codes and localized country names (according to <tt>I18n.locale</tt>)
@@ -96,4 +97,9 @@ module ActionView
     end
 
   end
+end
+
+if defined?(Rails)
+  require "localized_country_select/railtie"
+  Geocoder::Railtie.insert
 end
