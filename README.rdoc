@@ -22,7 +22,7 @@ See http://github.com/rails/country_select/tree/master/lib/country_select.rb
 
 In your Gemfile add:
 
-    gem 'localized_country_select', :github=>'mlitwiniuk/localized_country_select'
+    gem 'localized_country_select', :git=>'git://github.com/mlitwiniuk/localized_country_select.git', :tag=>'v0.9.0'
 
 == Example
 
