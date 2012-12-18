@@ -101,5 +101,4 @@ end
 
 if defined?(Rails)
   require "localized_country_select/railtie"
-  Geocoder::Railtie.insert
 end

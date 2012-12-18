@@ -1,5 +1,4 @@
 require 'localized_country_select'
-require 'geocoder/models/active_record'
 
 module LocalizedCountrySelect
   if defined? Rails::Railtie
