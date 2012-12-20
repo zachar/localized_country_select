@@ -30,9 +30,9 @@ namespace :import do
     # TODO : Implement locale import chooser from CLDR root via Highline
     
     # Setup variables
-    locale = ARGV[1]
+    locale = ENV['LOCALE']
     unless locale
-      puts "\n[!] Usage: rake import:country_select de\n\n"
+      puts "\n[!] Usage: rake import:country_select LOCALE=de\n\n"
       exit 0
     end
 
