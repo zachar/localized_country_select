@@ -2,7 +2,7 @@
 require File.expand_path('../lib/localized_country_select/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["karmi", "mlitwiniuk"]
+  gem.authors       = ["karmi", "mlitwiniuk", "LIM SAS", "Damien MATHIEU", "Julien SANCHEZ", "Herv\303\251 GAUCHER", "RainerBlessing "]
   gem.email         = ["maciej@litwiniuk.net"]
   gem.description   = %q{Localized "country_select" helper with Rake task for downloading locales from Unicode.org's CLDR}
   gem.summary       = %q{Localized "country_select" helper with Rake task for downloading locales from Unicode.org's CLDR}

@@ -22,12 +22,13 @@ See http://github.com/rails/country_select/tree/master/lib/country_select.rb
 
 In your Gemfile add:
 
-    gem 'localized_country_select', :git=>'git://github.com/mlitwiniuk/localized_country_select.git', :tag=>'v0.9.1'
+    gem 'localized_country_select', '>= 0.9.2'
 
 == Rails 2.3
 
 No longer supported, but you can still use old version of gem.
 In environment.rb add
+
     config.gem 'localized_country_select, , :version => '0.0.1'
 
 == Example
