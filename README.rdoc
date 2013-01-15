@@ -24,9 +24,17 @@ In your Gemfile add:
 
     gem 'localized_country_select', :git=>'git://github.com/mlitwiniuk/localized_country_select.git', :tag=>'v0.9.1'
 
+== Rails 2.3
+
+No longer supported, but you can still use old version of gem.
+In environment.rb add
+    config.gem 'localized_country_select, , :version => '0.0.1'
+
 == Example
 
-    <%= localized_country_select(:user, :country, [], :include_blank => 'Please choose...') %>
+Show full country names:
+
+    <%= localized_country_select(:user, :country, [], {:include_blank => 'Please choose...')} %>
 
 will become:
 
@@ -38,7 +46,28 @@ will become:
     <option value="ZW">Zimbabwe</option>
     </select>
 
+
+Show only country codes:
+
+   <%= localized_country_select(:user, :country, [], {:include_blank => 'Please choose...', :description => :abbreviated)}
+
+will become:
+
+    <select name="user[country]" id="user_country">
+    <option value="">Please choose...</option>
+    <option disabled="disabled" value="">-------------</option>
+    <option value="AF">AF</option>
+    ...
+    <option value="ZW">ZW</option>
+    </select>
+
+
 for the <tt>en</tt> locale.
+
+
+== Formtastic and SimpleForm
+
+Gem supports (via alias_method) both formtastic and simple_form :country input
 
 == Other resources
 
