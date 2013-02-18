@@ -20,7 +20,7 @@ require 'open-uri'
 # 
 # The code is deliberately procedural and simple, so it's easily
 # understandable by beginners as an introduction to Rake tasks power.
-# See http://github.com/joshmh/cldr/tree/master/converter.rb for much more robust solution
+# See https://github.com/svenfuchs/ruby-cldr for much more robust solution
 
 namespace :import do
 
