@@ -64,9 +64,9 @@ namespace :import do
     countries = []
     doc.search("//tr").each do |row|
       n = row.search("td[@class='n']")
-      g = row.search("td[@class='g']")
-      if n && n.inner_html =~ /NamesTerritories/ && g.inner_html =~ /^[A-Z]{2}/
-        code   = g.inner_text
+      g = row.search("td")
+      if n && n.inner_html =~ /NamesTerritories/ && g.count==7 && g[4].inner_html =~ /^[A-Z]{2}/
+        code   = g[4].inner_text
         code   = code[-code.size, 2]
         name   = row.search("td[@class='v']").inner_text
         countries << { :code => code.to_sym, :name => name.to_s }
@@ -74,6 +74,7 @@ namespace :import do
       end
     end
     puts "\n\n... imported countries: #{countries.count}"
+    #puts countries.sort{|a,b| a[:code]<=>b[:code]}.inspect
 
 
     # ----- Prepare the output format     ------------------------------------------
