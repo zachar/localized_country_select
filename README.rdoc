@@ -22,7 +22,7 @@ See http://github.com/rails/country_select/tree/master/lib/country_select.rb
 
 In your Gemfile add:
 
-    gem 'localized_country_select', '>= 0.9.4'
+    gem 'localized_country_select', '>= 0.9.5'
 
 == Rails 2.3
 
