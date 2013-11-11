@@ -62,19 +62,23 @@ namespace :import do
     # ----- Parse the HTML with Hpricot     ----------------------------------------
     puts "... parsing the HTML file"
     countries = []
+    imported_codes = []
     doc.search("//tr").each do |row|
       n = row.search("td[@class='n']")
       g = row.search("td")
-      if n && n.inner_html =~ /NamesTerritories/ && g.count==7 && g[4].inner_html =~ /^[A-Z]{2}/
+      if n && n.inner_html =~ /NamesTerritories/ && g.count>=7 && g[4].inner_html =~ /^[A-Z]{2}/
         code   = g[4].inner_text
-        code   = code[-code.size, 2]
+        code   = code[-code.size, 2].to_sym
         name   = row.search("td[@class='v']").inner_text
-        countries << { :code => code.to_sym, :name => name.to_s }
+        unless imported_codes.member?(code)
+          imported_codes << code
+          countries << { :code => code, :name => name.to_s }
+        end
         print " ... #{code}: #{name}"
       end
     end
     puts "\n\n... imported countries: #{countries.count}"
-    #puts countries.sort{|a,b| a[:code]<=>b[:code]}.inspect
+    puts countries.sort{|a,b| a[:code]<=>b[:code]}.inspect
 
 
     # ----- Prepare the output format     ------------------------------------------
