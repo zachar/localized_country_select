@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Localized "country_select" helper with Rake task for downloading locales from Unicode.org's CLDR}
   gem.summary       = %q{Localized "country_select" helper with Rake task for downloading locales from Unicode.org's CLDR}
   gem.homepage      = "https://github.com/mlitwiniuk/localized_country_select"
+  gem.license       = 'MIT'
 
   gem.files       = `git ls-files`.split("\n") - %w[localized_country_select.gemspec Gemfile init.rb]
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
